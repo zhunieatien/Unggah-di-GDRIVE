@@ -1,0 +1,71 @@
+
+        window.clearout = { options: {"api_url":"https://api.clearout.io","timeout":15,"mode":"ajax","submit_button_selector":null,"on_ready":function anonymous(
+) {
+
+// NOTE: Enter only the function body
+window.clearout.options.email.suggest_email = false;
+},"submit_button_cursor_style":"pointer","inspect":false,"debug":false,"feedback_google_recaptcha":"<span style=\"color:red;font-size:15px;\">Google Recaptcha Verification Failed</span>","feedback_cloudflare_turnstile":"<span style=\"color:red;font-size:15px;\">Bot Validation Failed, Please refresh the page</span>","form_elements":[],"auto_discovery":true,"prefill_validation":false,"suppress_form_builtin_error_message_selector":null,"form_discovery_duration":15000,"form_discovery_interval":500,"trigger_form_discovery_on_event":null,"bot_detection":{"enabled":false,"provider":null,"data":null},"email":{"elements":[],"enabled":true,"block_role_account":false,"block_free_account":true,"block_disposable_account":true,"block_unknown_status":false,"block_catchall_status":false,"block_gibberish_account":true,"allow_safe_to_send_yes":false,"block_form_submission_on_timeout":false,"block_form_submission_on_limit_crossed":false,"feedback":true,"optional":false,"feedback_invalid_classname":"co-error-msg","feedback_invalid_message":"Valid business email is required.\n<span style=\"color:red;font-size:15px;\">","feedback_role_account_message":"Valid business email is required.\n<span style=\"color:red;font-size:15px;\">","feedback_free_account_message":"Valid business email is required.\n<span style=\"color:red;font-size:15px;\">","feedback_disposable_account_message":"Valid business email is required.\n<span style=\"color:red;font-size:15px;\">","feedback_unknown_message":"Valid business email is required.\n<span style=\"color:red;font-size:15px;\">","feedback_catchall_message":"Valid business email is required.\n<span style=\"color:red;font-size:15px;\">","feedback_gibberish_message":"Valid business email is required.\n<span style=\"color:red;font-size:15px;\">","feedback_safe_to_send_only_message":"Valid business email is required.\n<span style=\"color:red;font-size:15px;\">","feedback_on_timeout_message":"Valid business email is required.\n<span style=\"color:red;font-size:15px;\">","feedback_on_usage_limit_crossed_message":"Valid business email is required.\n<span style=\"color:red;font-size:15px;\">","selector":null,"on_before_verify":function anonymous({email, $form}
+) {
+try {
+// Style the platform's feedback element
+  if (window.clearout && window.clearout.$) {
+    window.clearout.$('.co-feedback-msg, .co-error-msg')
+      .css({
+        'font-size': '14px',
+        'color': '#ff0000',
+        'font-family': 'Inter, sans-serif',
+        'line-height': '1.5',
+        'font-weight': '500',
+        'text-transform': 'none'
+      });
+    window.clearout.$('.co-feedback-container .co-powered-by').css({'display': 'none'});
+  }
+
+  return {
+    is_acceptable: !isEdu,
+    error_msg: isEdu ? 'Valid business email is required.' : ''
+  };
+} catch (e) {
+  return {
+    is_acceptable: true,
+    error_msg: ''
+  };
+}
+},"on_after_verify":function anonymous({email, $form, result}
+) {
+try {
+// Style the platform's feedback element
+  if (window.clearout && window.clearout.$) {
+    window.clearout.$('.co-feedback-msg, .co-error-msg')
+      .css({
+        'font-size': '14px',
+        'color': '#ff0000',
+        'font-family': 'Inter, sans-serif',
+        'line-height': '1.5',
+        'font-weight': '500',
+        'text-transform': 'none'
+      });
+    window.clearout.$('.co-feedback-container .co-powered-by').css({'display': 'none'});
+  }
+
+  return {
+    is_acceptable: !isEdu,
+    error_msg: isEdu ? 'Valid business email is required.' : ''
+  };
+} catch (e) {
+  return {
+    is_acceptable: true,
+    error_msg: ''
+  };
+}
+},"suggest_email":true,"suggest_email_message_template":"Did you mean __SUGGESTED_EMAIL_ADDRESS__?","preset":"custom","feedbackMode":"custom","hooksMode":"custom"},"phone":{"elements":[],"enabled":false,"block_mobile_numbers":false,"block_landline_numbers":false,"block_toll_free_numbers":false,"block_voip_numbers":false,"block_unknown_type":false,"block_form_submission_on_timeout":false,"block_form_submission_on_limit_crossed":false,"allowed_countries":[],"feedback":true,"feedback_invalid_message":"<span style=\"color:red;font-size:15px;\">Invalid phone number</span>","feedback_invalid_classname":"co-phone-error-msg","feedback_mobile_message":"<span style=\"color:red;font-size:15px;\">Invalid - Mobile numbers not allowed</span>","feedback_landline_message":"<span style=\"color:red;font-size:15px;\">Invalid - Landline numbers Not allowed</span>","feedback_toll_free_message":"<span style=\"color:red;font-size:15px;\">Invalid - Toll Free numbers not allowed</span>","feedback_voip_message":"<span style=\"color:red;font-size:15px;\">Invalid - VOIP numbers not allowed</span>","feedback_unknown_message":"<span style=\"color:red;font-size:15px;\">Invalid - Unknown numbers not allowed</span>","feedback_on_timeout_message":"<span style=\"color:red;font-size:15px;\">Phone Number could not be verified - timeout occurred</span>","feedback_on_usage_limit_crossed_message":"<span style=\"color:red;font-size:15px;\">Unable to verify the phone number, usage limit crossed</span>","feedback_country_not_allowed_message":"<span style=\"color:red;font-size:15px;\">Sorry, phone numbers from your country are not allowed</span>","selector":null,"optional":false,"prefill_dial_code":false,"on_before_verify":null,"on_after_verify":null,"preset":"accept_any_valid_phone_numbers"},"name":{"elements":[],"enabled":false,"block_gibberish_name":false,"block_profanity_words":true,"block_form_submission_on_timeout":false,"block_form_submission_on_limit_crossed":false,"gibberish_threshold":"high","feedback":true,"feedback_invalid_message":"<span style=\"color:red;font-size:15px;\">Invalid name</span>","feedback_invalid_classname":"co-name-error-msg","feedback_gibberish_message":"<span style=\"color:red;font-size:15px;\">Invalid - Gibberish name not allowed</span>","feedback_profanity_message":"<span style=\"color:red;font-size:15px;\">Invalid - Profanity words are not allowed</span>","feedback_on_timeout_message":"<span style=\"color:red;font-size:15px;\">Name could not be verified - timeout occurred</span>","feedback_on_usage_limit_crossed_message":"<span style=\"color:red;font-size:15px;\">Unable to verify the Name, usage limit crossed</span>","selector":null,"optional":false,"on_before_verify":null,"on_after_verify":null,"preset":"accept_any_valid_names"},"version":12,"app_token":"91fd668e817b9e2db6c21959e9f8629a:ad1429d3596e3db985dcfc4293917d4296f5609911b5ffefc91390994e867f12"} };
+        const clearoutJSWScript = document.createElement('script');
+        const clearoutJSWLoadedTime = Date.now();
+        clearoutJSWScript.id = 'clearout-js-widget-sdk';
+        clearoutJSWScript.src = 'https://clearout.io/wp-content/co-js-widget/clearout_jswidget_sdk.js?t=' + clearoutJSWLoadedTime ;
+        clearoutJSWScript.async = true;
+        clearoutJSWScript.setAttribute('app_id', '55dbc86e3e71ec9cf8c7998163bd2afa');
+        clearoutJSWScript.setAttribute('u_id', '68a1e21db9b346ccfb603477');
+        clearoutJSWScript.setAttribute('settings_public_url', 'https://clearout.io/jswidget/');
+        document.head.appendChild(clearoutJSWScript);
+      

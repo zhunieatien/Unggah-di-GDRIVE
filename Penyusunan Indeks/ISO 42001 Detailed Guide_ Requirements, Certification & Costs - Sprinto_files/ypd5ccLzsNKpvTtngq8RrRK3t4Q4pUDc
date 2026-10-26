@@ -1,0 +1,14 @@
+(function() {
+    var u = new URLSearchParams(window.location.search);
+
+    var script = document.createElement('script');
+    script.src = 'https://p.midbound.net/mdb_pxl_01KGK16NAVHMRBFAE76TF43Y7A?tenant=ypd5ccLzsNKpvTtngq8RrRK3t4Q4pUDc';
+    script.async = true;
+    document.head.appendChild(script);
+
+    // Verification handshake
+    if (u.get('midbound_verify') === 'true') {
+        console.log("Midbound Installed ✅")
+        window.opener && window.opener.postMessage('MIDBOUND_VERIFY_HANDSHAKE', '*');
+    }
+  })();

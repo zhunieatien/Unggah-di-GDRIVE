@@ -1,0 +1,2 @@
+jQuery(document).ready(function($){(function(){const bodyStyles=document.body.querySelectorAll('style');if(bodyStyles.length===0){console.log("No style tags found inside the <body>.");return}
+let combinedCSS="";bodyStyles.forEach(tag=>{combinedCSS+=tag.textContent+"\n"});const unifiedStyle=document.createElement('style');unifiedStyle.id="consolidated-body-styles";unifiedStyle.textContent=combinedCSS;document.head.append(unifiedStyle);bodyStyles.forEach(tag=>tag.remove());console.log(`Merged ${bodyStyles.length} style tags from <body> into 1.`)})()})
